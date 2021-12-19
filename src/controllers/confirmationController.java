@@ -10,9 +10,6 @@ public class confirmationController {
 	final static String fxml = "../layouts/confirmation.fxml";
 	private static boolean confirm;
 
-	@FXML
-	PasswordField passField;
-	
 	public static boolean init()
 	{
 		confirm = false;
@@ -25,6 +22,9 @@ public class confirmationController {
 		//return the confirmation.
 		return confirm;
 	}
+	
+	@FXML
+	PasswordField passField;
 	
 	@FXML
 	public void imSure()

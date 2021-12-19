@@ -23,6 +23,11 @@ public class gigWrapper extends wrapper {
 		format();
 	}
 	
+	public void action()
+	{
+		System.out.println("checkin");
+	}
+	
 	private void format()
 	{
 		//Setting Up Data//
@@ -41,12 +46,7 @@ public class gigWrapper extends wrapper {
 		//Format
 		name.setPadding(new Insets(0,30,0,0));
 		this.setHgrow(detailsContainer, Priority.ALWAYS);
-		helperMethods.setBtnBackground(price, Color.GREEN);
-	}
-	
-	public void action()
-	{
-		System.out.println("checkin");
+		helperMethods.setRegionBackground(price, Color.GREEN);
 	}
 	
 }

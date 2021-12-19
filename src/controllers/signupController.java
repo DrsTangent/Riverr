@@ -22,6 +22,11 @@ public class signupController {
 	@FXML
 	VBox window;
 	
+	public void initialize()
+	{
+		Main.primaryStage.setMinHeight(window.getPrefHeight());
+		Main.primaryStage.setMinWidth(window.getPrefWidth());
+	}
 	public void loginAccount()
 	{
 		Main.loadScene("../layouts/login.fxml");
@@ -29,10 +34,5 @@ public class signupController {
 	public void signup()
 	{
 		System.out.print("sign up");
-	}
-	public void initialize()
-	{
-		Main.primaryStage.setMinHeight(window.getPrefHeight());
-		Main.primaryStage.setMinWidth(window.getPrefWidth());
 	}
 }

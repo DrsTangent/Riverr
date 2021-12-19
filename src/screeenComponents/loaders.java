@@ -16,6 +16,7 @@ public class loaders {
 		{
 			pane = new VBox();
 			((VBox) pane).getChildren().add(new Label("Coudn't Load FXML"));
+			e.printStackTrace();
 		}
 		
 		return pane;

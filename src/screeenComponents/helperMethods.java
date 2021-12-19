@@ -12,7 +12,7 @@ import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
 
 public class helperMethods {
-	public static void setBtnBackground(Region region, Color color)
+	public static void setRegionBackground(Region region, Color color)
 	{
 		region.setBackground(new Background(new BackgroundFill(color, null, Insets.EMPTY)));
 	}

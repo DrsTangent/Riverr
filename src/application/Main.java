@@ -11,11 +11,21 @@ import screeenComponents.loaders;
 
 public class Main extends Application {
 	public static Stage primaryStage;
+	public static void loadScene(String fxml){
+	    Parent pane;
+		pane = loaders.loadScene(fxml);
+		Scene scene = new Scene( pane );
+	    primaryStage.setScene(scene);
+	}
+
+	public static void main(String[] args) {
+		launch(args);
+	}
 	@Override
 	public void start(Stage primaryStage) {
 		Main.primaryStage = primaryStage;
 		try {
-			Parent root =  loaders.loadScene("../layouts/login.fxml");
+			Parent root =  loaders.loadScene("../layouts/gigViewer.fxml");
 			Scene scene = new Scene(root);
 			Main.primaryStage.setTitle("Riverr");
 			Main.primaryStage.setScene(scene);
@@ -23,15 +33,5 @@ public class Main extends Application {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-	}
-
-	public static void loadScene(String fxml){
-	    Parent pane;
-		pane = loaders.loadScene(fxml);
-		Scene scene = new Scene( pane );
-	    primaryStage.setScene(scene);
-	}
-	public static void main(String[] args) {
-		launch(args);
 	}
 }

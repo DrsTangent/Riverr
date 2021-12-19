@@ -41,11 +41,16 @@ public class userPanelController {
 	
 	
 	
-	public void initialize()
+	//Projects Tab//
+	public void addProject()
 	{
-		gigContainer.getChildren().add(new gigWrapper("Logo Designing", "Ali Hussain", "I will design a fucking logo for you", 99.0));
-		gigContainer.getChildren().add(new gigWrapper("Logo Designing", "Ali Hussain", "I will design a fucking logo for you", 99.0));
+		
 	}
+	public void changePass()
+	{
+		
+	}
+	
 	//Functions//
 	//Profile Tab//
 	public void editProfile()
@@ -53,25 +58,20 @@ public class userPanelController {
 		editProfileController.init();
 	}
 	
-	public void changePass()
+	public void initialize()
 	{
-		
+		gigContainer.getChildren().add(new gigWrapper("Logo Designing", "Ali Hussain", "I will design a fucking logo for you", 99.0));
+		gigContainer.getChildren().add(new gigWrapper("Logo Designing", "Ali Hussain", "I will design a fucking logo for you", 99.0));
 	}
 	
+
 	//Gigs Tab//
 	public void searchGig()
 	{
 		
 	}
 	
-
 	public void viewOrders()
-	{
-		
-	}
-	
-	//Projects Tab//
-	public void addProject()
 	{
 		
 	}

@@ -17,6 +17,13 @@ public class editProfileController {
 	final private static String title = "Riverr-Edit Profile";
 	final private static String fxml = "../layouts/editprofile.fxml";
 	
+	public static void init()
+	{
+		customDialogBox dialog = new customDialogBox(title, fxml);
+		
+		//Showing Dialog Box
+		dialog.showAndWait();
+	}
 	@FXML
 	TextField firstName;
 	@FXML
@@ -25,17 +32,10 @@ public class editProfileController {
 	TextField contactNumber;
 	@FXML
 	TextField emailAddress;
+	
+	
 	@FXML
 	TextField userName;
-	
-	
-	public static void init()
-	{
-		customDialogBox dialog = new customDialogBox(title, fxml);
-		
-		//Showing Dialog Box
-		dialog.showAndWait();
-	}
 	@FXML
 	public void saveChanges()
 	{
