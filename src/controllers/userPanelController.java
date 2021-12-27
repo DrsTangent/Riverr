@@ -3,6 +3,7 @@ package controllers;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import relations.User;
 import screeenComponents.gigWrapper;
 
 
@@ -14,7 +15,12 @@ public class userPanelController {
 	//Over all Screen//
 	@FXML
 	VBox window;
+	//Tab Pane//
+	@FXML 
+	TabPane tabPane;
 	//Profile Tab//
+	@FXML
+	Tab profileTab;
 	@FXML
 	Label firstName;
 	@FXML
@@ -46,7 +52,7 @@ public class userPanelController {
 	{
 		
 	}
-	public void changePass()
+	public void projectTabSelection()
 	{
 		
 	}
@@ -57,13 +63,18 @@ public class userPanelController {
 	{
 		editProfileController.init();
 	}
-	
-	public void initialize()
+	public void changePass()
 	{
-		gigContainer.getChildren().add(new gigWrapper("Logo Designing", "Ali Hussain", "I will design a fucking logo for you", 99.0));
-		gigContainer.getChildren().add(new gigWrapper("Logo Designing", "Ali Hussain", "I will design a fucking logo for you", 99.0));
+		
 	}
-	
+	public void profileTabSelection()
+	{
+		firstName.setText(User.getFirstName());
+		lastName.setText(User.getLastName());
+		contactNumber.setText(User.getContactNumber());
+		emailAddress.setText(User.getEmailAddress());
+		
+	}
 
 	//Gigs Tab//
 	public void searchGig()
@@ -74,7 +85,19 @@ public class userPanelController {
 	public void viewOrders()
 	{
 		
+	}	
+	
+	public void gigTabSelection()
+	{
+		
 	}
 	
-	
+	public void initialize()
+	{
+		SingleSelectionModel<Tab> selectionModel = tabPane.getSelectionModel();
+		selectionModel.select(profileTab);
+		
+		gigContainer.getChildren().add(new gigWrapper("Logo Designing", "Ali Hussain", "I will design a fucking logo for you", 99.0));
+		gigContainer.getChildren().add(new gigWrapper("Logo Designing", "Ali Hussain", "I will design a fucking logo for you", 99.0));
+	}
 }

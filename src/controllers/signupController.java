@@ -33,6 +33,6 @@ public class signupController {
 	}
 	public void signup()
 	{
-		System.out.print("sign up");
+		
 	}
 }

@@ -4,6 +4,8 @@ import application.Main;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
+import relations.User;
+import screeenComponents.errorAlert;
 
 public class loginController {
 	@FXML
@@ -20,7 +22,18 @@ public class loginController {
 	}
 	public void loginACC()
 	{
-		System.out.println("L mera");
+		if(usernameField.getText().isBlank() || passwordField.getText().isBlank())
+		{
+			errorAlert.showError("Fields are left blank", "Username / Password cannot be blank");
+		}
+		else if(User.login(usernameField.getText(), passwordField.getText()))
+		{
+			Main.loadScene("../layouts/userPanel.fxml");
+		}
+		else
+		{
+			errorAlert.showError("Username/Password is incorrect", "Incorrect username / password");
+		}
 	}
 	public void signUp()
 	{

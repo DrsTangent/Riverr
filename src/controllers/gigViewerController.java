@@ -1,6 +1,7 @@
 package controllers;
 
 import javafx.fxml.FXML;
+import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
@@ -18,6 +19,7 @@ public class gigViewerController {
 	
 	public void initialize()
 	{
-		packageWindow.getChildren().add(loaders.loadScene("../layouts/package_viewer.fxml"));
+		Parent checkin = loaders.loadScene("../layouts/packageViewer.fxml");
+		packageWindow.getChildren().add(checkin);
 	}
 }

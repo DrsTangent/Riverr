@@ -4,34 +4,31 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
 
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="294.0" prefWidth="141.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="337.0" prefWidth="178.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.packageController">
    <children>
-      <HBox prefHeight="100.0" prefWidth="200.0">
+      <HBox prefHeight="77.0" prefWidth="178.0" VBox.vgrow="ALWAYS">
          <children>
-            <VBox prefHeight="200.0" prefWidth="100.0">
+            <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
                <children>
-                  <Label text="Label" />
-                  <Label text="Label" />
-                  <Label text="Label" />
-                  <Label text="Label" />
+                  <Label text="Type:" />
+                  <Label text="Price:" />
+                  <Label text="Time:" />
+                  <Label text="Description:" />
                </children>
             </VBox>
-            <VBox prefHeight="200.0" prefWidth="100.0">
+            <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
                <children>
-                  <Label text="Label" />
-                  <Label text="Label" />
-                  <Label text="Label" />
-                  <Label text="Label" />
+                  <Label fx:id="type" text="type" />
+                  <Label fx:id="price" text="price" />
+                  <Label fx:id="time" text="time" />
+                  <Text fx:id="packageDescription" strokeType="OUTSIDE" strokeWidth="0.0" text="packageDescription" wrappingWidth="104.3671875" />
                </children>
             </VBox>
          </children>
       </HBox>
-      <VBox prefHeight="200.0" prefWidth="100.0">
-         <children>
-            <Button mnemonicParsing="false" text="Button" />
-         </children>
-      </VBox>
+      <Button mnemonicParsing="false" onAction="#orderPackage" prefHeight="60.0" prefWidth="198.0" text="Order" VBox.vgrow="ALWAYS" />
    </children>
 </VBox>

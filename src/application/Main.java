@@ -25,7 +25,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		Main.primaryStage = primaryStage;
 		try {
-			Parent root =  loaders.loadScene("../layouts/gigViewer.fxml");
+			Parent root =  loaders.loadScene("../layouts/login.fxml");
 			Scene scene = new Scene(root);
 			Main.primaryStage.setTitle("Riverr");
 			Main.primaryStage.setScene(scene);
