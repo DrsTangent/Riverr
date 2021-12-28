@@ -39,12 +39,6 @@
             <Insets bottom="10.0" left="40.0" right="40.0" />
          </VBox.margin>
       </TextField>
-      <Label text="User Name*" />
-      <TextField fx:id="userName">
-         <VBox.margin>
-            <Insets bottom="10.0" left="40.0" right="40.0" />
-         </VBox.margin>
-      </TextField>
       <Button mnemonicParsing="false" onAction="#saveChanges" text="Save Changes">
          <VBox.margin>
             <Insets bottom="10.0" />

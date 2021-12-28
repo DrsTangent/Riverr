@@ -16,11 +16,25 @@ public class User {
 		ArrayList<ArrayList<Object>> data = dataRetrival.getClientData(userName, password);
 		if(!data.isEmpty())
 		{
+			
 			User.userName = (String) data.get(0).get(0);
 			User.firstName = (String) data.get(0).get(2);
 			User.lastName = (String) data.get(0).get(3);
 			User.contactNumber = (String) data.get(0).get(7);
 			User.emailAddress = (String) data.get(0).get(5);
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
+	public static boolean confirmAction (String password)
+	{
+		ArrayList<ArrayList<Object>> data = dataRetrival.getClientData(User.userName, password);
+		if(!data.isEmpty())
+		{
 			return true;
 		}
 		else

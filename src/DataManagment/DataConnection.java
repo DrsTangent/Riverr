@@ -41,6 +41,23 @@ public class DataConnection {
 		}
 	}
 	
+	public static void updateQuery(String Query)
+	{
+		connectToDB(); 
+		
+		
+		try {
+			Statement smt = myconn.createStatement();
+			smt.executeQuery(Query);
+			smt.executeQuery("COMMIT");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			System.out.print("Error while Fecthing/Writing Data");
+			e.printStackTrace();
+		}
+		closeConnection();//Close Connection
+	}
+	
 	public static ArrayList<ArrayList<Object>> executeQuery(String Query)
 	{
 		connectToDB(); // Connection to DB
@@ -69,12 +86,15 @@ public class DataConnection {
 				data.add(row);
 			}
 			
+			smt.executeQuery("COMMIT");
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			System.out.print("Error while Fecthing/Writing Data");
 			e.printStackTrace();
 		}
 		/*Stop Fecthing Data from Database*/
+		
 		
 		
 		closeConnection();//Close Connection

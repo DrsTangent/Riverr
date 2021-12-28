@@ -1,11 +1,13 @@
 package controllers;
 
+import DataManagment.dataUpdate;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import screeenComponents.customDialogBox;
+import screeenComponents.errorAlert;
 import screeenComponents.loaders;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
@@ -17,9 +19,11 @@ public class editProfileController {
 	final private static String title = "Riverr-Edit Profile";
 	final private static String fxml = "../layouts/editprofile.fxml";
 	
+	private static customDialogBox dialog;
+	
 	public static void init()
 	{
-		customDialogBox dialog = new customDialogBox(title, fxml);
+		dialog = new customDialogBox(title, fxml);
 		
 		//Showing Dialog Box
 		dialog.showAndWait();
@@ -33,12 +37,22 @@ public class editProfileController {
 	@FXML
 	TextField emailAddress;
 	
-	
-	@FXML
-	TextField userName;
 	@FXML
 	public void saveChanges()
 	{
-		System.out.print("checkin");
+		if(firstName.getText().isBlank() || emailAddress.getText().isBlank())
+		{
+			errorAlert.showError("Fields are left blank", "Username / Password cannot be blank");
+		}
+		else if(confirmationController.init())
+		{
+			dataUpdate.updateClientData(firstName.getText(), lastName.getText(), 
+					contactNumber.getText(), emailAddress.getText());
+			dialog.close();
+		}
+		else
+		{
+			System.out.print("Error while updating");
+		}
 	}
 }

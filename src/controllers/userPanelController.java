@@ -30,7 +30,7 @@ public class userPanelController {
 	@FXML
 	Label emailAddress;
 	@FXML
-	Label userName;
+	Label username;
 	//
 	@FXML
 	TextField searchgigBar;
@@ -73,6 +73,7 @@ public class userPanelController {
 		lastName.setText(User.getLastName());
 		contactNumber.setText(User.getContactNumber());
 		emailAddress.setText(User.getEmailAddress());
+		username.setText(User.getUserName());
 		
 	}
 

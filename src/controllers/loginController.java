@@ -32,7 +32,7 @@ public class loginController {
 		}
 		else
 		{
-			errorAlert.showError("Username/Password is incorrect", "Incorrect username / password");
+			errorAlert.showError("Password is incorrect", "Incorrect password");
 		}
 	}
 	public void signUp()
