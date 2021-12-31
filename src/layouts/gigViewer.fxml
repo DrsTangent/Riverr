@@ -12,7 +12,7 @@
          <children>
             <VBox alignment="CENTER" prefHeight="55.0" prefWidth="383.0">
                <children>
-                  <Label text="gigTitle" textAlignment="CENTER">
+                  <Label fx:id="gigTitle" text="gigTitle" textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>

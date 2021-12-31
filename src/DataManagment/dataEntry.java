@@ -5,31 +5,31 @@ public class dataEntry {
 	public static void main(String args[])
 	{
 		//Testing adding Client -- status: Sucessful
-		//addClient(2, "Abdul", "Hadi", "unchartedone", "8248492383", "abdulhadi@gmail.com", "mypassword");
+		//addClient("Abdul", "Hadi", "ffds", "sdffs", "sdfs@gmail.com", "sdf");
 		
 		//Testing adding Free Lancer --status: Sucessful
-		//addFreeLancer(1, "Ali", "Hussain", "theonlyOne", "03171585848", "aslinamhaikya613@gmail.com", "Talagang2");
+		addFreeLancer("Ahmed", "Ali", "EscanorTHEONE", "03165568686", "atthepinnacle@gmail.com", "Talagang122");
 	}
 	
 	/* Adding Client */
-	public static  void addClient(int clientID, String firstName, 
+	public static  void addClient( String firstName, 
 			String lastName, String userName, String contact,
 			String email, String password)
 	{
 		addUser(firstName, lastName, userName, contact, email, password, "client");
-		String insertClientQuery = "INSERT INTO Riverr_db.CLIENT (CLIENT_ID, USERNAME) VALUES ('"+clientID+"', '"+userName+"')";
-		DataConnection.executeQuery(insertClientQuery);
+		String insertClientQuery = "INSERT INTO Riverr_db.CLIENT (CLIENT_ID, USERNAME) VALUES (CLIENTIDSEQ.nextval, '"+userName+"')";
+		DataConnection.updateQuery(insertClientQuery);
 		saveChanges();
 	}
 	
 	/*Adding Free Lancer*/
-	public static  void addFreeLancer(int freeLancerID, String firstName, 
+	public static  void addFreeLancer(String firstName, 
 			String lastName, String userName, String contact,
 			String email, String password)
 	{
 		addUser(firstName, lastName, userName, contact, email, password, "Free Lancer");
-		String insertClientQuery = "INSERT INTO Riverr_db.FREE_LANCER (FREELANCERID, USERNAME) VALUES ('"+freeLancerID+"', '"+userName+"')";
-		DataConnection.executeQuery(insertClientQuery);
+		String insertClientQuery = "INSERT INTO Riverr_db.FREE_LANCER (FREELANCERID, USERNAME) VALUES (FREELANCERID_SEQ.nextval, '"+userName+"')";
+		DataConnection.updateQuery(insertClientQuery);
 		saveChanges();
 	}
 	
@@ -42,7 +42,7 @@ public class dataEntry {
 		String insertUserQuery = "INSERT INTO USERS (FIRST_NAME, LAST_NAME, USERNAME, CONTACTS, EMAIL, PASSWORD, STATUS)"
 				+ "VALUES ('"+firstName+"', '"+lastName+"', '"+userName+"',"
 				+ " '"+contact+"', '"+email+"', '"+password+"', '"+status+"')";
-		DataConnection.executeQuery(insertUserQuery);
+		DataConnection.updateQuery(insertUserQuery);
 	}
 	
 	/*Types of Packages*/

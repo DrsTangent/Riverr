@@ -21,7 +21,7 @@ public class User {
 			User.firstName = (String) data.get(0).get(2);
 			User.lastName = (String) data.get(0).get(3);
 			User.contactNumber = (String) data.get(0).get(7);
-			User.emailAddress = (String) data.get(0).get(5);
+			User.emailAddress = (String) data.get(0).get(4);
 			return true;
 		}
 		else

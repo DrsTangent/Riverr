@@ -26,6 +26,24 @@ public class dataRetrival {
 		return DataConnection.executeQuery(retrivalCommand);
 	}
 	
+	/*RETRIEVING GIGS VIEWS*/
+	public static ArrayList<ArrayList<Object>> getGigs()
+	{
+		String retriveGigs = "SELECT * FROM GIGVIEW";
+		return DataConnection.executeQuery(retriveGigs);
+	}
 	
+	/*RETRIVE ONE GIG*/
+	public static ArrayList<Object> getGig(int gigID)
+	{
+		String retriveGig = "SELECT * FROM DETAILEDGIG WHERE DETAILEDGIG.ID = "+gigID;
+		return DataConnection.executeQuery(retriveGig).get(0);
+	}
 	
+	/*Get Available Packages of a certain gig*/
+	public static ArrayList<ArrayList<Object>> getPackages(int gigID)
+	{
+		String retrivePackages = "SELECT PACKAGES_ID, PACKAGETYPES_PACKAGETYPE, PRICE, DETAILED_DESCRIPTION FROM PACKAGES WHERE GIGS_ID = "+gigID;
+		return DataConnection.executeQuery(retrivePackages);
+	}
 }

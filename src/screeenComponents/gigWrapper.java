@@ -1,19 +1,22 @@
 package screeenComponents;
 
+import controllers.gigViewerController;
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 
 public class gigWrapper extends wrapper {
-	String gigName;
-	String freeLancerName;
-	String gigDescrip;
-	double gigStandPrice;
+	private int gigID;
+	private String gigName;
+	private String freeLancerName;
+	private String gigDescrip;
+	private double gigStandPrice;
 	
-	public gigWrapper(String gigName, String fLName, String gigDes, double price)
+	public gigWrapper(int gigID, String gigName, String fLName, String gigDes, double price)
 	{
 		this.setHeight(40);
+		this.gigID = gigID;
 		this.gigName = gigName;
 		this.freeLancerName = fLName;
 		this.gigDescrip = gigDes;
@@ -25,7 +28,11 @@ public class gigWrapper extends wrapper {
 	
 	public void action()
 	{
-		System.out.println("checkin");
+		gigViewerController.gigID = gigID;
+		
+		customDialogBox viewGig = new customDialogBox(gigName, "../layouts/gigviewer.fxml");
+		
+		viewGig.showAndWait();
 	}
 	
 	private void format()
@@ -34,7 +41,7 @@ public class gigWrapper extends wrapper {
 		Label name = new Label(gigName);
 		Label fLName = new Label(freeLancerName);
 		Label gigDesp = new Label(gigDescrip);
-		Label price = new Label(String.valueOf(gigStandPrice));
+		Label price = new Label("Starting At " + String.valueOf(gigStandPrice));
 
 		VBox detailsContainer = new VBox();
 		HBox namesContainer = new HBox();

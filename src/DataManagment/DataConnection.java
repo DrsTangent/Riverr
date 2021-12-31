@@ -90,7 +90,7 @@ public class DataConnection {
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			System.out.print("Error while Fecthing/Writing Data");
+			System.out.println("Error while Fecthing/Writing Data");
 			e.printStackTrace();
 		}
 		/*Stop Fecthing Data from Database*/
