@@ -46,4 +46,16 @@ public class dataRetrival {
 		String retrivePackages = "SELECT PACKAGES_ID, PACKAGETYPES_PACKAGETYPE, PRICE, DETAILED_DESCRIPTION FROM PACKAGES WHERE GIGS_ID = "+gigID;
 		return DataConnection.executeQuery(retrivePackages);
 	}
+	
+	public static ArrayList<ArrayList<Object>> getPendingOrders(String username)
+	{
+		String retrivePendingOrders = "SELECT * FROM PENDINGORDERS WHERE CLIENT_USERNAME = '" + username + "'";
+		return DataConnection.executeQuery(retrivePendingOrders);
+	}
+	
+	public static ArrayList<ArrayList<Object>> getCompletedOrders(String username)
+	{
+		String retrivePendingOrders = "SELECT * FROM COMPLETEDORDERS WHERE CLIENT_USERNAME = '" + username + "'";
+		return DataConnection.executeQuery(retrivePendingOrders);
+	}
 }

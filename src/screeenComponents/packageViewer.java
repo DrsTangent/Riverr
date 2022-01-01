@@ -1,5 +1,6 @@
 package screeenComponents;
 
+import controllers.orderController;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -10,14 +11,14 @@ import javafx.scene.layout.VBox;
 
 public class packageViewer extends VBox{
 	private int packageID;
-	private String packageName;
+	private String packageType;
 	private String packageDetails;
 	private double packagePrice;
 	
-	public packageViewer(int packageID, String packageName, String packageDetails, double packagePrice)
+	public packageViewer(int packageID, String packageType, String packageDetails, double packagePrice)
 	{
 		this.packageID = packageID;
-		this.packageName = packageName;
+		this.packageType = packageType;
 		this.packageDetails = packageDetails;
 		this.packagePrice = packagePrice;
 		
@@ -27,7 +28,7 @@ public class packageViewer extends VBox{
 	private void format()
 	{
 		/*Making Details*/
-		Label pkgName = new Label(this.packageName);
+		Label pkgName = new Label(this.packageType);
 		
 		Label pkgPrice = new Label("Price: " + Double.toString(this.packagePrice));
 		
@@ -50,6 +51,6 @@ public class packageViewer extends VBox{
 	
 	public void orderPackage()
 	{
-		
+		orderController.init(packageID, packageType);
 	}
 }

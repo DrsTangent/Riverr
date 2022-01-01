@@ -81,7 +81,7 @@ public class dataEntry {
 	{
 		String insertOrder = "INSERT INTO \"RIVERR_DB\".\"ORDERS\" (CLIENT_USERNAME, PACKAGES_PACKAGES_ID, ORDERDESCRIP) "
 				+ "VALUES ('"+clientUserName+"', '"+packageID+"', '"+orderDescrip+"')";
-		DataConnection.executeQuery(insertOrder);
+		DataConnection.updateQuery(insertOrder);
 	}
 	
 	

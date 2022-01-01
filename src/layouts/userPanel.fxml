@@ -82,29 +82,24 @@
                   </VBox>
                </content>
           </Tab>
-            <Tab id="viewProjects" onSelectionChanged="#projectTabSelection" text="Projects">
+            <Tab id="viewProjects" onSelectionChanged="#ordersTabSelection" text="Orders">
                <content>
                   <VBox fx:id="gigsViewer1" alignment="BOTTOM_LEFT" prefHeight="415.0" prefWidth="520.0">
                      <children>
                         <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
                            <children>
-                              <Label text="Current Projects" />
+                              <Label text="Current Orders" />
                               <ScrollPane prefHeight="191.0" prefWidth="520.0" VBox.vgrow="ALWAYS">
                                  <content>
-                                    <VBox fx:id="currentProjectWindow" prefHeight="171.0" prefWidth="505.0" />
+                                    <VBox fx:id="currentOrdersWindow" prefHeight="171.0" prefWidth="505.0" />
                                  </content>
                               </ScrollPane>
-                              <Label text="Completed Projects" />
-                              <ScrollPane prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                              <Label text="Completed Orders" />
+                              <ScrollPane prefHeight="200.0" prefWidth="520.0" VBox.vgrow="ALWAYS">
                                  <content>
-                                    <VBox fx:id="completedProjectWindow" prefHeight="192.0" prefWidth="505.0" />
+                                    <VBox fx:id="completedOrdersWindow" prefHeight="192.0" prefWidth="505.0" />
                                  </content>
                               </ScrollPane>
-                           </children>
-                        </VBox>
-                        <VBox prefHeight="53.0" prefWidth="520.0">
-                           <children>
-                              <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addProject" prefHeight="55.0" prefWidth="520.0" text="Add Project" />
                            </children>
                         </VBox>
                      </children>

@@ -7,7 +7,9 @@ import java.math.BigInteger;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import relations.User;
+import screeenComponents.completedOrderWrapper;
 import screeenComponents.gigWrapper;
+import screeenComponents.pendingOrderWrapper;
 
 import java.util.ArrayList;
 
@@ -44,21 +46,43 @@ public class userPanelController {
 	@FXML
 	VBox gigContainer;
 	@FXML
-	VBox completedProjectWindow;
+	VBox completedOrdersWindow;
 	@FXML
-	VBox currentProjectWindow;
+	VBox currentOrdersWindow;
 	@FXML
 	ComboBox<?> searchOptions;
 	
 	
 	
 	//Projects Tab//
-	public void addProject()
+	public void ordersTabSelection()
 	{
+		currentOrdersWindow.getChildren().clear();
+		ArrayList<ArrayList<Object>> pendingOrders = dataRetrival.getPendingOrders(User.getUserName());
+		for(ArrayList<Object>  pendingOrder: pendingOrders)
+		{
+			pendingOrderWrapper pdOrder = new pendingOrderWrapper(
+					(String) pendingOrder.get(0), 
+					(String) pendingOrder.get(1), 
+					(String) pendingOrder.get(2), 
+					(String) pendingOrder.get(3)
+					);
+			currentOrdersWindow.getChildren().add(pdOrder);
+		}
 		
-	}
-	public void projectTabSelection()
-	{
+		completedOrdersWindow.getChildren().clear();
+		ArrayList<ArrayList<Object>> completedOrders = dataRetrival.getCompletedOrders(User.getUserName());
+		for(ArrayList<Object>  completedOrder: completedOrders)
+		{
+			completedOrderWrapper cOrder = new completedOrderWrapper(
+					(String) completedOrder.get(0), 
+					(String) completedOrder.get(1), 
+					(String) completedOrder.get(2), 
+					(String) completedOrder.get(3),
+					(String) completedOrder.get(4)
+					);
+			completedOrdersWindow.getChildren().add(cOrder);
+		}
 		
 	}
 	
@@ -88,13 +112,9 @@ public class userPanelController {
 		
 	}
 	
-	public void viewOrders()
-	{
-		
-	}	
-	
 	public void gigTabSelection()
 	{
+		gigContainer.getChildren().clear();
 		ArrayList<ArrayList<Object>> gigs = dataRetrival.getGigs();
 		for (ArrayList<Object> gigView: gigs)
 		{
